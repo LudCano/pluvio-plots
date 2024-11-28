@@ -2,3 +2,4 @@ pandas
 datetime
 matplotlib
 numpy
+requests
