@@ -7,6 +7,8 @@ print('Processing...')
 with open('proc_live_data.py') as file:
     exec(file.read())
 
+os.remove('hourly_plot.png')
+os.remove('10days_plot.png')
 
 print('Plotting hidroyear...')
 with open('plot_hidroyear.py') as file:
