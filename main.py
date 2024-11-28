@@ -1,4 +1,4 @@
-
+import os
 print('Downloading data...')
 with open('download_data.py') as file:
     exec(file.read())
