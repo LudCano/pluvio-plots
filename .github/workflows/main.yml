@@ -1,8 +1,8 @@
-name: INTI UV Live Plots
+name: Pluviometry Live Plots
 
 on:
   schedule:
-    - cron: '0,30 * * * *'  # Ejecuta todos los días a las 12:00 UTC
+    - cron: '0,15,30,45 * * * *'  # Ejecuta todos los días a las 12:00 UTC
   workflow_dispatch:
 
 jobs:
