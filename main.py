@@ -25,3 +25,9 @@ print('Plotting 10 days acum...')
 with open('plot_10days.py') as file:
     exec(file.read())
 print('Plot generated!')
+
+
+print('Plotting everything...')
+with open('plot_cotacota.py') as file:
+    exec(file.read())
+print('Plot generated!')
