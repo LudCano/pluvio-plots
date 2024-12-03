@@ -12,12 +12,13 @@ dav2.rename({'Minu':'Minute'}, axis = 'columns', inplace=True)
 dav2['datetime'] = pd.to_datetime(dav2.iloc[:,[0,1,2,3,4]])
 
 # dia en que el pluviometro fue destapado
-lim = dt.datetime.now() + dt.timedelta(days = -1)
+lst_dat = dav2.datetime.to_list()[-1]
+lim = lst_dat + dt.timedelta(days = -1)
 lim = lim.replace(hour = 0, minute= 0, second=0)
 df = dav2[dav2.datetime >= lim]
 df = df[['datetime','rain']]
 
-df2 = df.resample('1h',on='datetime').min().reset_index()#.drop('datetime', axis = 'columns').reset_index()
+df2 = df.resample('1h',on='datetime').max().reset_index()#.drop('datetime', axis = 'columns').reset_index()
 hrly = [0]
 rain = df2.rain.to_list()
 for i in range(len(rain)-1):
