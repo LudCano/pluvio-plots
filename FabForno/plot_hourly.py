@@ -6,7 +6,7 @@ import datetime as dt
 
 # reading files
 #data live (15min)
-dav2 = pd.read_csv('cota_cota_live.csv')
+dav2 = pd.read_csv('fabforno_live.csv')
 dav2.rename({'Minu':'Minute'}, axis = 'columns', inplace=True)
 dav2['datetime'] = pd.to_datetime(dav2.iloc[:,[0,1,2,3,4]])
 
@@ -16,7 +16,7 @@ lim = lim.replace(hour = 0, minute= 0, second=0)
 df = dav2[dav2.datetime >= lim]
 df = df[['datetime','rain']]
 
-df2 = df.resample('1h',on='datetime').min().reset_index()#.drop('datetime', axis = 'columns').reset_index()
+df2 = df.set_index('datetime').resample('1h').min().reset_index()#.drop('datetime', axis = 'columns').reset_index()
 hrly = [0]
 rain = df2.rain.to_list()
 for i in range(len(rain)-1):
@@ -40,4 +40,5 @@ ax.set_title('Precipitación últimos dos días Cota Cota', fontsize = 18)
 ax.set_xlabel('Hora Local', fontsize = 14)
 ax.set_ylabel('Precipitación [mm/hora]', fontsize = 14)
 
-fig.savefig('hourly_plot.png', dpi = 300)
+#plt.show()
+fig.savefig('../figs/hourly_plotFF.png', dpi = 300)

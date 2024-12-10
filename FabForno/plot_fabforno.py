@@ -7,7 +7,7 @@ import os
 
 # reading files
 #data live (15min)
-dav2 = pd.read_csv('cota_cota_live.csv')
+dav2 = pd.read_csv('fabforno_live.csv')
 dav2.rename({'Minu':'Minute'}, axis = 'columns', inplace=True)
 dav2['datetime'] = pd.to_datetime(dav2.iloc[:,[0,1,2,3,4]])
 
@@ -18,7 +18,7 @@ lim = lim.replace(hour = 0, minute= 0, second=0)
 df = dav2[dav2.datetime >= lim]
 df = df[['datetime','rain']]
 
-df2 = df.resample('1h',on='datetime').max().reset_index()#.drop('datetime', axis = 'columns').reset_index()
+df2 = df.set_index('datetime').resample('1h').max().reset_index()#.drop('datetime', axis = 'columns').reset_index()
 hrly = [0]
 rain = df2.rain.to_list()
 for i in range(len(rain)-1):
@@ -30,8 +30,6 @@ for i in range(len(rain)-1):
 
 df2['hrly'] = hrly
 
-if os.path.exists('plot_all_cotacota.png'):
-    os.remove('plot_all_cotacota.png')
 
 
 #########################################
@@ -62,7 +60,7 @@ ax1.set_ylabel('Precipitación [mm/hora]', fontsize = 10)
 ##### 10 dias
 #########################################
 #fig.savefig('hourly_plot.png', dpi = 300)
-aw = pd.read_csv('cotacota_2024.csv', parse_dates = ['date'])
+aw = pd.read_csv('fabforno_2024.csv', parse_dates = ['date'])
 #davis from nov26
 dav = pd.read_csv('rain2024_live.csv', parse_dates = ['date'])
 
@@ -93,8 +91,8 @@ ax2.set_ylabel('Precipitación acumulada diaria [mm]', fontsize = 10)
 #########################################
 ##### acumulado
 #########################################
-hist = pd.read_csv('cotacota_historial.csv', parse_dates = ['dtt'])
-aw = pd.read_csv('cotacota_2024.csv', parse_dates = ['date'])
+hist = pd.read_csv('fabforno_historial.csv', parse_dates = ['dtt'])
+aw = pd.read_csv('fabforno_2024.csv', parse_dates = ['date'])
 now = pd.read_csv('rain2024_live.csv', parse_dates=['date'])
 aw['date'] = aw.date + dt.timedelta(days = -366)
 aw['cumrain'] = aw.daily_rain.cumsum()
@@ -131,5 +129,5 @@ ax3.annotate(txt, (0.96,0.01), xycoords='axes fraction', ha = 'right', fontsize 
 ax3.annotate(last_date, (0.96,0.01), xycoords='figure fraction', ha = 'right', fontsize = 6)
 
 
-fig.savefig('plot_all_cotacota.png', dpi = 400)
+fig.savefig('../plot_all_fabforno.png', dpi = 400)
 #plt.show()

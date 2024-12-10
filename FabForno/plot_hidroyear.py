@@ -8,8 +8,8 @@ import os
 
 #os.remove('pluvio.png')
 
-hist = pd.read_csv('cotacota_historial.csv', parse_dates = ['dtt'])
-aw = pd.read_csv('cotacota_2024.csv', parse_dates = ['date'])
+hist = pd.read_csv('fabforno_historial.csv', parse_dates = ['dtt'])
+aw = pd.read_csv('fabforno_2024.csv', parse_dates = ['date'])
 now = pd.read_csv('rain2024_live.csv', parse_dates=['date'])
 aw['date'] = aw.date + dt.timedelta(days = -366)
 aw['cumrain'] = aw.daily_rain.cumsum()
@@ -41,4 +41,4 @@ ax.annotate(txt, (0.96,0.01), xycoords='axes fraction', ha = 'right', fontsize =
 ax.annotate(last_date, (0.96,0.01), xycoords='figure fraction', ha = 'right', fontsize = 6)
 #plt.show()
 
-fig.savefig('pluvio.png', dpi = 300)
+fig.savefig('../figs/pluvioFF.png', dpi = 300)
