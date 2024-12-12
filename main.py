@@ -5,7 +5,11 @@ for f in os.listdir('figs'):
     os.remove(os.path.join('figs',f))
     print('removed',f)
 
+if os.path.exists('plot_all_cotacota.png'):
+    os.remove('plot_all_cotacota.png')
 
+if os.path.exists('plot_all_fabforno.png'):
+    os.remove('plot_all_fabforno.png')
 
 print('------------------')
 print('WORKING COTA COTA')
