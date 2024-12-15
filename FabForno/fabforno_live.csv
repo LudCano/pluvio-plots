@@ -4545,3 +4545,5 @@ Year,Month,Day,Hour,Minu,temp_outside_C,rain,WS_ms,WD,IUV,Solar_Wm2
 2024,12,15,17,15,12.7778,0,7,184,null,null
 2024,12,15,17,30,12.2222,0,7,128,null,null
 2024,12,15,17,30,12.2222,0,7,128,null,null
+2024,12,15,17,30,12.2222,0,7,128,null,null
+2024,12,15,17,45,12.7778,0,0,184,null,null
