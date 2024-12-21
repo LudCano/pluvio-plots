@@ -6163,3 +6163,5 @@ Year,Month,Day,Hour,Minu,temp_outside_C,rain,WS_ms,WD,IUV,Solar_Wm2
 2024,12,21,14,00,13.3333,0,0,47,null,null
 2024,12,21,14,15,12.7778,0,0,97,null,null
 2024,12,21,14,15,12.7778,0,0,97,null,null
+2024,12,21,14,15,12.7778,0,0,97,null,null
+2024,12,21,14,30,12.7778,0,2,113,null,null
