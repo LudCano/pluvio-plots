@@ -9202,3 +9202,5 @@ Year,Month,Day,Hour,Minu,temp_outside_C,rain,WS_ms,WD,IUV,Solar_Wm2
 2025,01,01,18,15,13.3333,0,0,94,null,null
 2025,01,01,18,15,13.3333,0,0,94,null,null
 2025,01,01,18,30,13.3333,0,0,15,null,null
+2025,01,01,18,30,13.3333,0,0,15,null,null
+2025,01,01,18,45,12.7778,0,0,234,null,null
