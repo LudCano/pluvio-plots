@@ -115,8 +115,8 @@ rain_cummean = np.mean(rains, axis = 0)
 
 
 lin2, = ax3.plot(df_.dtt, rain_cummean, label = 'Promedio', c = 'k', lw = 1.5, ls = '--')
-lin3, = ax3.plot(aw.date, aw.cumrain, label = '2024', c = 'r', lw = 1.5)
-lin3, = ax3.plot(now.date, now.rainacum, label = '2024', c = 'r', lw = 1.5)
+lin3, = ax3.plot(aw.date, aw.cumrain, label = '2024-2025', c = 'r', lw = 1.5)
+lin3, = ax3.plot(now.date, now.rainacum, label = '2024-2025', c = 'r', lw = 1.5)
 ax3.xaxis.set_major_locator(mdates.MonthLocator(interval=2))
 ax3.xaxis.set_major_formatter(mdates.DateFormatter('%b'))
 ax3.set_xlabel('Año Hidrológico', fontsize = 10)
