@@ -48361,3 +48361,5 @@ Year,Month,Day,Hour,Minu,temp_outside_C,rain,WS_ms,WD,IUV,Solar_Wm2
 2025,05,24,09,16,5.55556,0,0,145,null,null
 2025,05,24,09,30,6.11111,0,0,128,null,null
 2025,05,24,09,30,6.11111,0,0,128,null,null
+2025,05,24,09,30,6.11111,0,0,128,null,null
+2025,05,24,09,45,6.11111,0,2,136,null,null
